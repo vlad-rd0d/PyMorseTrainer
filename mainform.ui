@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainForm</class>
+ <widget class="QMainWindow" name="MainForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>850</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>850</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Morse Trainer by RD0D</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/cwkey.ico</normaloff>images/cwkey.ico</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>24</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPlainTextEdit" name="outputText">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>1</y>
+      <width>849</width>
+      <height>389</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier New</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOn</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="documentTitle">
+     <string notr="true"/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="plainText">
+     <string notr="true"/>
+    </property>
+    <property name="placeholderText">
+     <string notr="true"/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string notr="true">toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNewText"/>
+   <addaction name="actionStart"/>
+   <addaction name="separator"/>
+   <addaction name="actionSetting"/>
+   <addaction name="actionAbout"/>
+   <addaction name="separator"/>
+   <addaction name="actionExitApp"/>
+  </widget>
+  <action name="actionNewText">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/bwplus.ico</normaloff>images/bwplus.ico</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">New Text</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">New Text</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">New Text (Alt + N)</string>
+   </property>
+   <property name="statusTip">
+    <string notr="true"/>
+   </property>
+   <property name="whatsThis">
+    <string notr="true"/>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Alt+N</string>
+   </property>
+  </action>
+  <action name="actionStart">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/bwplay.ico</normaloff>images/bwplay.ico</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Start</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">Start</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">Start (Alt + P)</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Alt+P</string>
+   </property>
+  </action>
+  <action name="actionSetting">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/bwsetting.ico</normaloff>images/bwsetting.ico</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Setting</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">Setting</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">Setting (Alt+ S)</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Alt+S</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/bwquestion.ico</normaloff>images/bwquestion.ico</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">About</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">About</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">About (Alt + A)</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Alt+A</string>
+   </property>
+  </action>
+  <action name="actionExitApp">
+   <property name="icon">
+    <iconset>
+     <normaloff>images/bwexit.ico</normaloff>images/bwexit.ico</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Exit</string>
+   </property>
+   <property name="iconText">
+    <string notr="true">Exit</string>
+   </property>
+   <property name="toolTip">
+    <string notr="true">Exit (Alt + Q)</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Alt+Q</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
