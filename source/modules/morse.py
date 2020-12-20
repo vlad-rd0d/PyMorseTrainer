@@ -110,15 +110,11 @@ class PlayThread(QtCore.QThread):
         self.freq = 0
         self.speed = 0
         self.text = ""
-        
+
     def run(self):
         set_wpm = self.words(self.speed)
-        self.sleep(2)
-        self.play_file(set_wpm, self.freq, self.text, morse_code)
-        #for i in self.text.split():
-            #self.sleep(1)  # "Засыпаем" на 3 секунды
-            # # Передача данных из потока через сигнал
-            #self.playsignal.emit("%s " % i)
+        self.sleep(2) # задержка в 2 сек.
+        self.play_text(set_wpm, self.freq, self.text, morse_code)
         pass
 
     def set_params(self, freq, wpm, text):
@@ -128,8 +124,8 @@ class PlayThread(QtCore.QThread):
         pass
 
     def words(self, words_per_minute):
-        """ Calculates the proper duration and spacing based on the selected words per minute """
-        # For 18 wpm and greater, use:
+        """ Вычисление продолжительности сигнала и интервалов для выбранной скорости WPM """
+        # Для скорости 18 WPM  и выше:
         if words_per_minute >= 18:
             unit = 1.2 / words_per_minute
             dit = round(unit, 2)
@@ -138,7 +134,7 @@ class PlayThread(QtCore.QThread):
             char_space = round(unit * 3, 2)
             word_space = round(unit * 7, 2)
             wpm_settings = (dit, dah, elem_space, char_space, word_space)
-        # For wpm less than 18, use:
+        # Для скорости ниже 18 WPM:
         else:
             unit = 1.2 / 18
             dit = round(unit, 2)
@@ -155,28 +151,23 @@ class PlayThread(QtCore.QThread):
             wpm_settings = (dit, dah, elem_space, round(char_space, 2), round(word_space, 2))
         return wpm_settings
 
-    def play_file(self, set_wpm, freq, text, morse_code):
-        """ Play code text """
+    def play_text(self, set_wpm, freq, text, morse_code):
+        """ Озвучиваем текст """
         dit = set_wpm[0]
         dah = set_wpm[1]
         elem_space = set_wpm[2]
         char_space = set_wpm[3]
         word_space = set_wpm[4]
-        #self.sleep(3)
         for word in text.split():
             PRINT_ON = True
             if word == '###':
-                #count -= 3
                 PRINT_ON = False
             elif word == '=':
-                #count -= 1
                 PRINT_ON = False
             elif word == '>':
-                #count -= 1
                 PRINT_ON = False
             elif word == '<<':
-                #count -= 2
-                PRINT_ON = False            
+                PRINT_ON = False
             for character in word:
                 letter = morse_code[character]
                 for element in letter:
@@ -186,7 +177,7 @@ class PlayThread(QtCore.QThread):
                     elif element == '-':
                         sine(freq, dah)
                         sine(0, elem_space)
-                sine(0, char_space) 
+                sine(0, char_space)
             if PRINT_ON:
                 self.playsignal.emit(word + " ")
-            sine(0, word_space)     
+            sine(0, word_space)

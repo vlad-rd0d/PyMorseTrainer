@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 from PyQt5 import QtCore, QtGui, QtWidgets
-#from PyQt5.QtWidgets import QMessageBox
-#from PyQt5.QtGui import QIcon
-#from PyQt5.QtCore import QSettings
-
 from modules.formsetting import fSetting
 from modules.ui_mainform import Ui_MainForm
 import modules.gentext as gen
