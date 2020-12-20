@@ -5,7 +5,7 @@ from modules.ui_mainform import Ui_MainForm
 import modules.gentext as gen
 import modules.morse as morse
 
-CONFIG_FILE_NAME = 'qpymorsetrainer.conf'
+CONFIG_FILE_NAME = 'pymorsetrainer.conf'
 
 class fMain(QtWidgets.QMainWindow):
     def __init__(self):
