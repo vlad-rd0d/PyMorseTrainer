@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #-------------------------------------------------------------------------------
-# Name:        Py Morse Trainer Qt5
+# Name:        PyMorseTrainer
 # Purpose:
 #
 # Author:      Vladimir Shchekunov RD0D
